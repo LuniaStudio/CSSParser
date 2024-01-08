@@ -26,6 +26,8 @@ This PHP class reduces download overhead by excluding unused CSS classes.
 
 ## Configuration Files
 
+Please note that classes must be written using PHP `.ini` syntax inside the config files, and not standard CSS syntax.
+
 - `config.ini` for general settings.
 - `root.ini` for root styles whiach are applied globally.
 - `elements.ini` for standard CSS elements (e.g. `div`).
