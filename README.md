@@ -33,7 +33,7 @@ Please note that classes must be written using PHP `.ini` syntax inside the conf
 - `elements.ini` for standard CSS elements (e.g. `div`).
 - `custom.ini` for custom classes (e.g. `header-hero`).
 - `utilities.ini` for built-in utility attributes (e.g. `row(lc)s+`).
-- `resolutions.ini` for media query resolutions.
+- `resolutions.ini` for built-in utility media query resolutions.
 
 ## Dependencies
 
