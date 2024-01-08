@@ -4,7 +4,7 @@ This PHP class reduces download overhead by excluding unused CSS classes.
 
 ## Introduction
 
-`CSSParser` analyses an HTML string and identifies the CSS styles being used. It then injects the corresponding classes from your own custom library directly back into the HTML `<styles>` tag. If there is no `<styles>` tag it will create one.
+`CSSParser` analyses an HTML string and identifies the CSS styles being used. It then injects the corresponding classes from your own custom library directly back into the HTML `<style>` tag. If there is no `<style>` tag it will create one.
 
 `CSSParser` includes an optional, responsive utility library that provides all the reusable classes you need to build a site using a simple and intuitive syntax. This utility library uses the `data-util` attribute, instead of the standard `class` attribute, in order to keep utilities separate from your own custom classes. You can change the attribute by editing `config.ini`.
 
