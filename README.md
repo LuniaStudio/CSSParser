@@ -12,13 +12,13 @@ This PHP class reduces download overhead by excluding unused CSS classes.
 
 1. **Instantiate StyleParser:**
     ```php
-    $StyleParser = new StyleParser();
+    $styleParser = new StyleParser();
     ```
 
 2. **Parse HTML:**
     ```php
     $html = '<html>...</html>';
-    $modifiedHtml = $StyleParser->parse($html);
+    $modifiedHtml = $styleParser->parse($html);
     ```
 
 3. **Customisation:**
