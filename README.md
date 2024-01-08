@@ -1,63 +1,51 @@
 # CSSParser
 
-A PHP class for parsing and transforming CSS within HTML markup.
+This PHP class reduces download overhead by excluding unused CSS classes.
 
 ## Introduction
 
-The `CSSParser` class is designed to parse HTML markup and dynamically apply CSS styles based on various configuration files. It allows for the creation and customization of styles for different elements, classes, and utilities, providing a flexible and efficient way to manage styles in HTML documents.
+`CSSParser` analyses an HTML string and identifies the CSS styles being used. It then injects the corresponding classes from your own custom library directly back into the HTML `<styles>` tag. If there is no `<styles>` tag it will create one.
 
-## Features
-
-- **Modular Configuration:** The class utilizes multiple configuration files for different aspects of CSS, allowing easy customization and extension.
-- **Dynamic Styling:** Parses HTML markup and dynamically adds CSS styles based on specified configurations.
-- **Media Queries:** Generates media queries for different resolutions, enabling responsive design.
+`CSSParser` includes an optional, responsive utility library that provides all the reusable classes you need to build a site using a simple and intuitive syntax. This utility library uses the `data-util` attribute, instead of the standard `class` attribute, in order to keep utilities separate from your own custom classes.
 
 ## Usage
 
-1. **Instantiate the CSSParser:**
+1. **Instantiate CSSParser:**
     ```php
     $cssParser = new CSSParser();
     ```
 
-2. **Parse HTML Markup:**
+2. **Parse HTML:**
     ```php
-    $htmlMarkup = '<html>...</html>';
-    $modifiedMarkup = $cssParser->parse($htmlMarkup);
+    $html = '<html>...</html>';
+    $modifiedHtml = $cssParser->parse($html);
     ```
 
-3. **Customization:**
-    - Modify configuration files (`config.ini`, `root.ini`, `elements.ini`, `custom.ini`, `utilities.ini`, `resolutions.ini`) to tailor the styling behavior.
+3. **Customisation:**
+    - Modify configuration files to tailor the styling behaviour.
 
 ## Configuration Files
 
-- `config.ini`: General configuration settings.
-- `root.ini`: :root styles, applied globally.
-- `elements.ini`: Element-specific styles.
-- `custom.ini`: Custom class styles.
-- `utilities.ini`: Styles applied based on utility attributes.
-- `resolutions.ini`: Resolutions and corresponding media query ranges.
+- `config.ini` for general settings.
+- `root.ini` for root styles whiach are applied globally.
+- `elements.ini` for standard CSS elements (e.g. `div`).
+- `custom.ini` for custom classes (e.g. `header-hero`).
+- `utilities.ini` for built-in utility attributes (e.g. `row(lc)s+`).
+- `resolutions.ini` for media query resolutions.
 
 ## Dependencies
 
 - **PHP:** Requires PHP 7.0 or later.
-- **DOMDocument:** Utilizes the DOMDocument class for HTML parsing.
+- **DOMDocument:** Uses the `DOMDocument` class for HTML parsing.
 
 ## Error Handling
 
-The class throws a `\RuntimeException` if parsing any configuration file fails. It is essential to handle this exception appropriately in your application.
+The class throws a `RuntimeException` if parsing any configuration file fails. It is essential to handle this exception appropriately in your application.
 
-## Example
-
-```php
-$cssParser = new CSSParser();
-$htmlMarkup = '<html>...</html>';
-$modifiedMarkup = $cssParser->parse($htmlMarkup);
-echo $modifiedMarkup;
-
-#License
+## License
 
 This project is licensed under the MIT License.
 
-#Acknowledgments
+## Acknowledgments
 
 Feel free to contribute, report issues, or suggest improvements!
